@@ -72,3 +72,52 @@
   .slide,.slide img,.svc-media img,.wa-float{transition:none!important}
   .slide.is-active img{transform:none}
 }
+
+
+/* ICONIC dark maritime visual system */
+:root{--navy:#061326;--blue:#0b2a4b;--orange:#ff7628;--bg:#061326;--muted:#a9bdd1;--line:#1a3b5b;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{background:#061326;color:#edf6ff}
+.nav.solid{background:rgba(4,15,30,.96);border-bottom:1px solid #1b3c5b;backdrop-filter:blur(14px)}
+.strip{background:#081c33;color:#b8d9ee;border-color:#1a3a59}
+.section{background-color:#061326;color:#edf6ff}
+.section:nth-of-type(even){background-color:#081a30}
+.heading>p,.svc-intro,.svc-item p{color:#a9bdd1}
+.heading h2,.svc h3,.svc-item h4{color:#f3f8ff}
+.svc,.card,.quote,.table,.quote-builder,.portal-card,.stats div{background:#0a2039;color:#edf6ff;border-color:#1b3d5d}
+.svc-item{background:#0b2744;border-color:#1b4263}
+.svc-media{background:#0b2744}
+.split{background:#07182c;color:#edf6ff}
+.split p:not(.eyebrow){color:#b5c8da}
+.split .banner img{border:1px solid #244665;box-shadow:0 24px 70px #0008;aspect-ratio:1.35;object-fit:cover}
+.facts div{border-color:#244665;background:#0a2039}
+input,select,textarea{background:#071a30;color:#edf6ff;border-color:#294a68}
+input::placeholder,textarea::placeholder{color:#8299b0}
+footer{background:#030b16;border-top:1px solid #183653}
+.ports a,.ports span{background:#0a2542;border-color:#1d4264}
+.chips a{background:#0a2542;border-color:#244665;color:#d9eaff}
+.serviceHero{background-color:#061326}
+.serviceDetail{background:#07182c;color:#edf6ff}
+.serviceDetail li{background:#0b2744;color:#eaf4ff}
+.quote{box-shadow:0 24px 70px #0005}
+.login-box{background:#0a2039;color:#edf6ff;border:1px solid #254665}
+.login-box p,.portal-card p{color:#a9bdd1}
+/* service directories */
+.port-logistics-section{padding-top:82px;padding-bottom:82px}
+.hold-section{padding-top:82px;padding-bottom:82px;background:#081a30!important}
+.service-feature-image{border:1px solid #234665;border-radius:18px;overflow:hidden;margin:0 0 26px;background:#0a2039;box-shadow:0 22px 60px #0005}
+.service-feature-image img{display:block;width:100%;height:auto;max-height:460px;object-fit:cover}
+.hold-feature-image img{max-height:430px;object-position:center 44%}
+.service-directory{list-style:none;padding:18px;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 14px;border:1px solid #1c3d5d;border-radius:16px;background:linear-gradient(145deg,#0a2039,#07182c)}
+.service-directory li{display:flex;align-items:center;gap:10px;min-height:54px;padding:9px 8px;border-bottom:1px solid #183653;color:#e3f0fc;font-size:13px;line-height:1.35}
+.service-index{display:grid;place-items:center;flex:0 0 29px;height:29px;border-radius:50%;background:#0d355b;color:#ff9a5c;font-size:11px;font-weight:900}
+.service-icon{width:25px;flex:0 0 25px;text-align:center;font-size:17px}
+.hold-directory{grid-template-columns:repeat(3,minmax(0,1fr))}
+.hold-directory li{min-height:64px;font-size:14px}
+/* reveal-on-scroll */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.08s}.reveal-delay-2{transition-delay:.16s}.reveal-delay-3{transition-delay:.24s}
+@media(max-width:900px){.service-directory{grid-template-columns:repeat(2,minmax(0,1fr))}.hold-directory{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.service-directory,.hold-directory{grid-template-columns:1fr;padding:10px}.service-directory li{min-height:50px}.service-feature-image{border-radius:12px}.port-logistics-section,.hold-section{padding:58px 5vw}.service-feature-image img{max-height:300px;object-fit:cover}.nav nav{background:#061326}.split{background:#07182c}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
