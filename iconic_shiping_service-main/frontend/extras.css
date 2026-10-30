@@ -1,0 +1,123 @@
+/* Home slider, service blocks, WhatsApp. Shared brand tokens style.css se (navy, blue, orange). */
+
+/* ---------- Hero slider ---------- */
+.hero-slider{position:relative;width:min(1280px,92vw);margin:26px auto 0;outline:none}
+.hero-slider:focus-visible{outline:3px solid var(--orange);outline-offset:4px;border-radius:18px}
+.slides{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:#050e1b;box-shadow:0 30px 80px #00000080}
+.slide{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s}
+.slide.is-active{opacity:1;visibility:visible;z-index:1}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06);transition:transform 7s ease}
+.slide.is-active img{transform:scale(1)}
+.slide.poster img{object-fit:contain}
+.slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:90px 30px 26px;background:linear-gradient(transparent,#050e1bf2);color:#fff;display:grid;gap:6px;justify-items:start}
+.slide figcaption b{font-size:clamp(20px,2.6vw,32px);letter-spacing:-.02em;line-height:1.1}
+.slide figcaption span{font-size:14px;color:#c8d4e1;line-height:1.5}
+.slide figcaption a{margin-top:6px;background:var(--orange);color:#fff;font-weight:800;font-size:14px;padding:10px 16px;border-radius:8px;min-height:44px;display:inline-flex;align-items:center}
+.sl-btn{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;border:1px solid #ffffff66;background:#071426b3;color:#fff;display:grid;place-items:center;cursor:pointer;z-index:3;transition:background .2s}
+.sl-btn:hover{background:var(--orange);border-color:var(--orange)}
+.sl-btn.prev{left:14px}
+.sl-btn.next{right:14px}
+.dots{display:flex;justify-content:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.dot{width:12px;height:12px;min-width:12px;min-height:12px;border-radius:8px;border:0;padding:0;background:#8fa6bf66;cursor:pointer;transition:width .3s,background .3s}
+.dot[aria-current="true"]{width:30px;background:var(--orange)}
+.dot:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+/* ---------- Hero buttons ---------- */
+.wa-btn{background:#25d366;color:#fff;border:0}
+.wa-btn:hover{background:#1ebe5a}
+
+/* ---------- Services ---------- */
+.svc-list{display:grid;gap:44px}
+.svc{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 1px 2px #07142608;scroll-margin-top:90px}
+.svc:nth-child(even){grid-template-columns:1.2fr 1fr}
+.svc:nth-child(even) .svc-media{order:2}
+.svc-media{margin:0;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:#071426}
+.svc-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.svc:hover .svc-media img{transform:scale(1.04)}
+.svc-no{font-size:12px;font-weight:900;letter-spacing:.2em;color:var(--orange);margin:0 0 8px}
+.svc h3{font-size:clamp(24px,2.6vw,32px);margin:0 0 10px;color:var(--navy);letter-spacing:-.03em;line-height:1.15}
+.svc-intro{color:var(--muted);line-height:1.7;font-size:15px;margin:0 0 18px}
+.svc-items{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.svc-item{background:#f5f8fb;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.svc-item h4{margin:0 0 6px;color:var(--navy);font-size:15px}
+.svc-item p{margin:0;font-size:13px;color:var(--muted);line-height:1.6}
+.svc .btn{min-height:46px}
+
+/* ---------- WhatsApp floating button ---------- */
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;align-items:center;gap:9px;background:#25d366;color:#fff;font-weight:800;font-size:15px;padding:12px 18px;border-radius:999px;box-shadow:0 12px 28px #0006;min-height:52px;transition:transform .2s,background .2s}
+.wa-float:hover{transform:translateY(-3px);background:#1ebe5a}
+.wa-float:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+/* ---------- Responsive ---------- */
+@media(max-width:900px){
+  .svc,.svc:nth-child(even){grid-template-columns:1fr}
+  .svc:nth-child(even) .svc-media{order:0}
+  .svc-media{aspect-ratio:16/10}
+}
+@media(max-width:650px){
+  .hero-slider{margin-top:14px;width:94vw}
+  .slides{aspect-ratio:4/4.6;border-radius:12px}
+  .slide figcaption{padding:70px 16px 18px}
+  .slide figcaption span{font-size:13px}
+  .sl-btn{width:42px;height:42px}
+  .sl-btn.prev{left:8px}.sl-btn.next{right:8px}
+  .svc{padding:12px;gap:22px;border-radius:14px}
+  .svc-items{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .wa-float span{display:none}
+  .wa-float{padding:14px;right:14px;bottom:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .slide,.slide img,.svc-media img,.wa-float{transition:none!important}
+  .slide.is-active img{transform:none}
+}
+
+
+/* ICONIC dark maritime visual system */
+:root{--navy:#061326;--blue:#0b2a4b;--orange:#ff7628;--bg:#061326;--muted:#a9bdd1;--line:#1a3b5b;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{background:#061326;color:#edf6ff}
+.nav.solid{background:rgba(4,15,30,.96);border-bottom:1px solid #1b3c5b;backdrop-filter:blur(14px)}
+.strip{background:#081c33;color:#b8d9ee;border-color:#1a3a59}
+.section{background-color:#061326;color:#edf6ff}
+.section:nth-of-type(even){background-color:#081a30}
+.heading>p,.svc-intro,.svc-item p{color:#a9bdd1}
+.heading h2,.svc h3,.svc-item h4{color:#f3f8ff}
+.svc,.card,.quote,.table,.quote-builder,.portal-card,.stats div{background:#0a2039;color:#edf6ff;border-color:#1b3d5d}
+.svc-item{background:#0b2744;border-color:#1b4263}
+.svc-media{background:#0b2744}
+.split{background:#07182c;color:#edf6ff}
+.split p:not(.eyebrow){color:#b5c8da}
+.split .banner img{border:1px solid #244665;box-shadow:0 24px 70px #0008;aspect-ratio:1.35;object-fit:cover}
+.facts div{border-color:#244665;background:#0a2039}
+input,select,textarea{background:#071a30;color:#edf6ff;border-color:#294a68}
+input::placeholder,textarea::placeholder{color:#8299b0}
+footer{background:#030b16;border-top:1px solid #183653}
+.ports a,.ports span{background:#0a2542;border-color:#1d4264}
+.chips a{background:#0a2542;border-color:#244665;color:#d9eaff}
+.serviceHero{background-color:#061326}
+.serviceDetail{background:#07182c;color:#edf6ff}
+.serviceDetail li{background:#0b2744;color:#eaf4ff}
+.quote{box-shadow:0 24px 70px #0005}
+.login-box{background:#0a2039;color:#edf6ff;border:1px solid #254665}
+.login-box p,.portal-card p{color:#a9bdd1}
+/* service directories */
+.port-logistics-section{padding-top:82px;padding-bottom:82px}
+.hold-section{padding-top:82px;padding-bottom:82px;background:#081a30!important}
+.service-feature-image{border:1px solid #234665;border-radius:18px;overflow:hidden;margin:0 0 26px;background:#0a2039;box-shadow:0 22px 60px #0005}
+.service-feature-image img{display:block;width:100%;height:auto;max-height:460px;object-fit:cover}
+.hold-feature-image img{max-height:430px;object-position:center 44%}
+.service-directory{list-style:none;padding:18px;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 14px;border:1px solid #1c3d5d;border-radius:16px;background:linear-gradient(145deg,#0a2039,#07182c)}
+.service-directory li{display:flex;align-items:center;gap:10px;min-height:54px;padding:9px 8px;border-bottom:1px solid #183653;color:#e3f0fc;font-size:13px;line-height:1.35}
+.service-index{display:grid;place-items:center;flex:0 0 29px;height:29px;border-radius:50%;background:#0d355b;color:#ff9a5c;font-size:11px;font-weight:900}
+.service-icon{width:25px;flex:0 0 25px;text-align:center;font-size:17px}
+.hold-directory{grid-template-columns:repeat(3,minmax(0,1fr))}
+.hold-directory li{min-height:64px;font-size:14px}
+/* reveal-on-scroll */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.08s}.reveal-delay-2{transition-delay:.16s}.reveal-delay-3{transition-delay:.24s}
+@media(max-width:900px){.service-directory{grid-template-columns:repeat(2,minmax(0,1fr))}.hold-directory{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.service-directory,.hold-directory{grid-template-columns:1fr;padding:10px}.service-directory li{min-height:50px}.service-feature-image{border-radius:12px}.port-logistics-section,.hold-section{padding:58px 5vw}.service-feature-image img{max-height:300px;object-fit:cover}.nav nav{background:#061326}.split{background:#07182c}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
